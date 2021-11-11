@@ -1,0 +1,11 @@
+<div>
+    <button (click)="ocultarComponente()">Ocultar componente</button>
+    <hr>
+    <div *ngIf="!ocultar" style="background-color: green;">
+        <hooksangular-component></hooksangular-component>
+    </div>
+    <h1>Soy una vista de PruebaComponent</h1>
+    <h2>{{titulo}}</h2>
+    <h3>{{descripcion}}</h3>
+    <p>{{anyo}}</p>
+</div>

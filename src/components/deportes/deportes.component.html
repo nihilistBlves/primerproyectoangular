@@ -1,0 +1,33 @@
+<div>
+    <h2>Estilos con ngStyle</h2>
+    <ul>
+        <li *ngFor="let num of numeros" [style.backgroundColor]="num % 2 == 0? 'green': 'red'">
+            {{num}}
+        </li>
+    </ul>
+    <hr>
+    <h1 style="color: blueviolet;">Deportes</h1>
+    <h2>Número de deportes: {{deportes.length}}</h2>
+
+    <div *ngIf="deportes.length < 7; then condiciontrue; else condicionelse">
+    </div>
+
+    <ng-template #condiciontrue>
+        <h2 style="color:red">
+            Tenemos menos de 7 deportes
+        </h2>
+    </ng-template>
+    <ng-template #condicionelse>
+        <h2 style="color:green">
+            Tenemos más de 7 deportes
+        </h2>
+    </ng-template>
+
+    <h4 style="color: coral;">Primer deporte: {{deportes[0]}}</h4>
+    <!-- BUCLE PARA MOSTRAR LOS DEPORTES EN UNA LISTA -->
+    <ul>
+        <li *ngFor="let dep of deportes; let i = index">
+            Posición: {{i}}, Deporte: {{dep}}
+        </li>
+    </ul>
+</div>

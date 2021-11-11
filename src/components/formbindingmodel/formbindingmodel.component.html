@@ -1,0 +1,20 @@
+<div>
+    <h1>Form con binding model</h1>
+    <h2 style="color:green">{{mensaje}}</h2>
+    <form #userForm="ngForm" (ngSubmit)="recibirFormulario()">
+        <label>Nombre: </label>
+        <input type="text" name="cajanombre" #cajanombre="ngModel" [(ngModel)]="user.nombre">
+        <label style="color:red;" *ngIf="!cajanombre.valid && cajanombre.touched">   
+            El nombre es obligatorio
+        </label>
+        <label>Apellidos: </label>
+        <input type="text" name="apellidos" #apellidos="ngModel" [(ngModel)]="user.apellidos">
+        <label>Edad: </label>
+        <input type="number" name="edad" #edad="ngModel" [(ngModel)]="user.edad">
+        <button>Enviar datos</button>
+    </form>
+    <hr>
+    <h2>Nombre: {{user.nombre}}</h2>
+    <h2>Apellidos: {{user.apellidos}}</h2>
+    <h2>Edad: {{user.edad}}</h2>
+</div>
